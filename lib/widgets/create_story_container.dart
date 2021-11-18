@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_facebook_responsive_ui/data/data.dart';
+import 'package:flutter_facebook_responsive_ui/models/story_model.dart';
 
 class Createstories extends StatelessWidget {
   @override
@@ -16,26 +17,35 @@ class Createstories extends StatelessWidget {
             return Stack(
               children: [
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Image(
-                    height: double.infinity,
-                    width: 60,
-                    image: CachedNetworkImageProvider(currentUser.imageUrl),
+                  padding: const EdgeInsets.fromLTRB(8, 8, 0, 8),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(24),
+                    child: Image(
+                      height: double.infinity,
+                      width: 110,
+                      image: CachedNetworkImageProvider(currentUser.imageUrl),
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
               ],
             );
           }
-          // final Story story = stories[index - 1];
+          final Story story = stories[index - 1];
           return Stack(
             children: [
               Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  color: Colors.blue,
-                  width: 60,
+                padding: const EdgeInsets.fromLTRB(8, 8, 0, 8),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(24),
+                  child: Image(
+                    height: double.infinity,
+                    width: 110,
+                    image: CachedNetworkImageProvider(story.imageUrl),
+                    fit: BoxFit.cover,
+                  ),
                 ),
-              )
+              ),
             ],
           );
         },
