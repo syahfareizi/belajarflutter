@@ -1,1 +1,1 @@
-# Flutter Facebook Responsive UI Starter Project
+# Tune App UI with Facebook App UI as references
