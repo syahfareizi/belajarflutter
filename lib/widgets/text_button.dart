@@ -5,6 +5,8 @@ class Textbutton extends StatelessWidget {
   final Color colors;
   final String text;
   final Function onPressed;
+  final double fontsize;
+  final Color warna;
 
   const Textbutton({
     Key key,
@@ -12,6 +14,8 @@ class Textbutton extends StatelessWidget {
     @required this.colors,
     @required this.text,
     @required this.onPressed,
+    this.fontsize = 20,
+    this.warna = Colors.black,
   }) : super(key: key);
 
   @override
@@ -30,8 +34,8 @@ class Textbutton extends StatelessWidget {
             text,
             style: TextStyle(
               fontWeight: FontWeight.bold,
-              fontSize: 20,
-              color: Colors.black,
+              fontSize: fontsize,
+              color: warna,
             ),
           ),
         ],

@@ -1,4 +1,3 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -62,6 +61,15 @@ class Homescreen extends StatelessWidget {
             padding: EdgeInsets.fromLTRB(0, 0, 0, 5),
             sliver: SliverToBoxAdapter(
               child: Createstories(),
+            ),
+          ),
+          SliverList(
+            delegate: SliverChildBuilderDelegate(
+              (context, index) {
+                final Post post = posts[index];
+                return Postcontainer(post: post);
+              },
+              childCount: posts.length,
             ),
           ),
         ],
